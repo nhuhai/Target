@@ -1,0 +1,389 @@
+:root {
+  --cyan: #18f5f3;
+  --cyan-deep: #0ba6a5;
+  --graphite: #45454a;
+  --graphite-dark: #333438;
+  --text: #f4f4f5;
+  --muted: #cacbd0;
+  --dim: #aaaab0;
+  --teal-panel: #489da0;
+  --line: rgba(238, 238, 244, 0.88);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--text);
+  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+button {
+  border: 0;
+  font: inherit;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 24px 40px;
+}
+
+.hud {
+  position: relative;
+  width: 443px;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.28));
+}
+
+.legacy-content {
+  width: 828px;
+  height: 656px;
+  margin-left: 46px;
+  transform: scale(0.4347826087);
+  transform-origin: top left;
+}
+
+.info-ring {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 4px solid currentColor;
+  border-radius: 50%;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 0.8;
+}
+
+.active-tools svg,
+.select-button svg {
+  width: 27px;
+  color: var(--cyan);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 5;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.team-card {
+  width: 100%;
+  position: relative;
+  border-left: 3px solid var(--line);
+  border-top: 3px solid var(--line);
+}
+
+.active-header .info-ring {
+  width: 39px;
+  height: 39px;
+  font-family: Arial, sans-serif;
+  font-size: 29px;
+  font-weight: 700;
+}
+
+.watch-icon {
+  position: relative;
+  width: 34px;
+  height: 47px;
+  color: #d5d6dc;
+  border: 7px solid currentColor;
+  border-radius: 17px;
+}
+
+.watch-icon::before,
+.watch-icon::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  width: 12px;
+  height: 12px;
+  background: currentColor;
+}
+
+.watch-icon::before {
+  top: -17px;
+  clip-path: polygon(22% 0, 78% 0, 100% 100%, 0 100%);
+}
+
+.watch-icon::after {
+  bottom: -17px;
+  clip-path: polygon(0 0, 100% 0, 78% 100%, 22% 100%);
+}
+
+.active-card {
+  min-height: 761px;
+  padding: 33px 31px 35px 33px;
+  background: linear-gradient(138deg, #55b6b9, var(--teal-panel) 48%, #438d91);
+  color: rgba(246, 249, 250, 0.95);
+  border-color: rgba(185, 255, 255, 0.8);
+  box-shadow:
+    inset 0 0 0 2px rgba(24, 245, 243, 0.45),
+    0 0 11px rgba(24, 245, 243, 0.85);
+  clip-path: polygon(
+    29px 0,
+    100% 0,
+    100% calc(100% - 27px),
+    calc(100% - 27px) 100%,
+    0 100%,
+    0 29px
+  );
+}
+
+.active-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.active-header h1 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  color: #ffffff;
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.active-header p {
+  margin: 13px 0 0;
+  color: var(--cyan);
+  font-size: 33px;
+  font-weight: 650;
+  line-height: 1;
+}
+
+.active-tools {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding-top: 2px;
+  color: #f5f8f8;
+  font-size: 30px;
+  font-weight: 650;
+}
+
+.active-tools svg {
+  width: 28px;
+  margin-top: 6px;
+  color: #e8ffff;
+}
+
+.watch-icon.light {
+  color: #f3fbfb;
+}
+
+.net-row {
+  position: relative;
+  min-height: 75px;
+  margin-top: 16px;
+  padding-left: 74px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-size: 31px;
+}
+
+.checkbox {
+  position: absolute;
+  left: 2px;
+  top: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 4px;
+  background: #effbfb;
+}
+
+.checkbox::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 7px;
+  width: 22px;
+  height: 12px;
+  border-left: 5px solid #4faeb1;
+  border-bottom: 5px solid #4faeb1;
+  transform: rotate(-45deg);
+}
+
+.status-dot {
+  position: absolute;
+  right: -8px;
+  top: 8px;
+  width: 38px;
+  height: 38px;
+  background: #f6ffff;
+  border: 8px solid var(--cyan);
+  border-radius: 50%;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.55);
+}
+
+.target-list {
+  list-style: none;
+  margin: 24px 0 0 70px;
+  padding: 0;
+}
+
+.target-list li {
+  display: grid;
+  grid-template-columns: 40px 44px 1fr;
+  column-gap: 20px;
+  align-items: start;
+  min-height: 113px;
+  color: rgba(236, 247, 248, 0.82);
+}
+
+.target-list .number {
+  padding-top: 9px;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 650;
+  text-align: right;
+}
+
+.compass {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-top: 4px;
+  border-radius: 50%;
+  background: rgba(232, 255, 255, 0.72);
+}
+
+.compass::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 7px;
+  width: 14px;
+  height: 24px;
+  background: #459da1;
+  clip-path: polygon(50% 0, 100% 100%, 50% 76%, 0 100%);
+  transform: rotate(45deg);
+}
+
+.compass::after {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 17px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(232, 255, 255, 0.72);
+}
+
+.target-list p,
+.target-list time {
+  margin: 0;
+  display: block;
+  font-size: 31px;
+  font-weight: 550;
+  line-height: 1.12;
+}
+
+.target-list time {
+  margin-top: 15px;
+}
+
+.control-card {
+  position: relative;
+  min-height: 248px;
+  padding: 55px 36px 0;
+  display: flex;
+  gap: 39px;
+  align-items: flex-start;
+  background: linear-gradient(145deg, #46464b, #323337);
+  border-left: 3px solid rgba(238, 238, 244, 0.72);
+  border-top: 3px solid rgba(238, 238, 244, 0.72);
+  color: #c7c7cc;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 28px) 0,
+    100% 28px,
+    100% 79%,
+    72% 79%,
+    65% 100%,
+    0 100%
+  );
+}
+
+.stepper,
+.select-button {
+  height: 82px;
+  border: 3px solid #d7d7dd;
+  border-left-width: 9px;
+  background: rgba(80, 80, 86, 0.2);
+  color: #c9c9ce;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.stepper {
+  width: 340px;
+  display: grid;
+  grid-template-columns: 1fr 80px 80px;
+}
+
+.stepper > span,
+.select-button span {
+  display: flex;
+  align-items: center;
+  padding-left: 19px;
+}
+
+.stepper button {
+  display: grid;
+  place-items: center;
+  border-left: 3px solid #d7d7dd;
+  background: transparent;
+  color: var(--cyan);
+  font-size: 55px;
+  line-height: 1;
+}
+
+.select-button {
+  width: 375px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px 0 6px;
+}
+
+.confirm-strip {
+  position: relative;
+  height: 200px;
+  background: #000000;
+  bottom: 0;
+  margin-top: -55px;
+}
+
+.confirm-strip button {
+  position: absolute;
+  right: 23px;
+  bottom: 37px;
+  width: 236px;
+  height: 125px;
+  padding-top: 5px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #26b8b6, #159b9b);
+  clip-path: polygon(29px 0, 100% 0, 100% 100%, 0 100%, 0 29px);
+  font-size: 40px;
+  font-weight: 700;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55);
+  box-shadow: inset 0 0 24px rgba(24, 245, 243, 0.26);
+}

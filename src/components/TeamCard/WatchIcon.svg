@@ -1,0 +1,13 @@
+<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path d="M16.667 10a6.647 6.647 0 0 0-2.534-5.225L13.333 0H6.667l-.792 4.775A6.617 6.617 0 0 0 3.333 10c0 2.125.992 4.008 2.542 5.225L6.667 20h6.666l.8-4.775A6.647 6.647 0 0 0 16.667 10zM5 10c0-2.758 2.242-5 5-5s5 2.242 5 5-2.242 5-5 5-5-2.242-5-5z" id="team-card-watch-path"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="team-card-watch-mask" fill="#fff">
+      <use xlink:href="#team-card-watch-path"/>
+    </mask>
+    <g mask="url(#team-card-watch-mask)" fill="#FFF" fill-opacity=".7">
+      <path d="M-10.833-10.833h41.667v41.667h-41.667z"/>
+    </g>
+  </g>
+</svg>
